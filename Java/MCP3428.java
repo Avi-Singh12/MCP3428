@@ -36,6 +36,6 @@ public class MCP3428
 		}
 
 		// Output data to screen
-		System.out.printf("Raw value of the source : %d %n", raw_adc);
+		System.out.printf("Digital value of Analog Input : %d %n", raw_adc);
 	}
 }
