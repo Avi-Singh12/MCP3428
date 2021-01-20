@@ -1,12 +1,10 @@
 /****************************************************************************
-/*
         Distributed with a free-will license.
         Use it any way you want, profit or free, provided it fits in the licenses of its associated works.
         MCP3428
         This code is designed to work with the MCP3428_I2CADC I2C Mini Module available from ControlEverything.com.
         https://www.controleverything.com/content/Analog-Digital-Converters?sku=MCP3428_I2CADC#tabs-0-product_tabset-2
- */
-/****************************************************************************/
+****************************************************************************/
 
 #include <Wire.h>
 #include <math.h>
