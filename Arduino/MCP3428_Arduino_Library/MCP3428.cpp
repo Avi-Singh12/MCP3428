@@ -17,7 +17,7 @@
 MCP3428::MCP3428(uint8_t devAddress)
 {
     Wire.begin();
-    devAddr = 1101<<3;
+    devAddr = 0x68;
     devAddr |= devAddress;
 }
 
