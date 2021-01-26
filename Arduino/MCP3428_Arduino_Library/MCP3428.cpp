@@ -131,7 +131,7 @@ long MCP3428::readADC()
                     raw_adc = raw_adc - 4096;
                 }
         
-                // raw_adc = raw_adc*1000/GAIN;
+                raw_adc = raw_adc*1000/GAIN;
         
                 break;
     
@@ -146,7 +146,7 @@ long MCP3428::readADC()
                     raw_adc = raw_adc - 16384;
                 }
         
-                // raw_adc = raw_adc*250/GAIN;
+                raw_adc = raw_adc*250/GAIN;
        
                 break;
     
@@ -161,7 +161,7 @@ long MCP3428::readADC()
                     raw_adc = raw_adc - 65536;
                 }
 
-                // raw_adc = raw_adc*62.5/GAIN;
+                raw_adc = raw_adc*62.5/GAIN;
       
                 break;
     }
