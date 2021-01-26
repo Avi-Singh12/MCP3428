@@ -21,6 +21,7 @@ class MCP3428
         long readADC();
 
     private:
+        unsigned long getConversionTime(uint8_t resolution);
 
         uint8_t devAddr;
         long raw_adc;

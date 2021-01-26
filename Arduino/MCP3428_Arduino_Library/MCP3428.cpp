@@ -115,7 +115,15 @@ long MCP3428::readADC()
 
     raw_adc = 0;
 
-    while(CheckConversion() == 1);
+    while(CheckConversion() == 1) {
+        unsigned long convTime = getConversionTime(SPS);
+        if (convTime > 16383) {
+            convTime /= 1000;
+            delay(convTime);
+        } else { 
+            delayMicroseconds(convTime);
+        }
+    }
 
     switch (SPS)
     {
@@ -166,4 +174,19 @@ long MCP3428::readADC()
                 break;
     }
     return raw_adc;
+}
+
+unsigned long MCP3428::getConversionTime(uint8_t resolution) {
+  switch (resolution) {
+    case 12:
+      return 4167; // 240 SPS
+    case 14:
+      return 16667; // 60 SPS
+    case 16:
+      return 66667; // 15 SPS
+    case 18:
+      return 266667; // 3.75 SPS
+    default:
+      return 0;
+  }
 }
