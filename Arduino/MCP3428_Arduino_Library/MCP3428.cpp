@@ -114,8 +114,8 @@ long MCP3428::readADC()
 {
 
     raw_adc = 0;
-
-    while(CheckConversion() == 1) {
+    int tries = 0;
+    while(CheckConversion() == 1 && tries++ < 5) {
         unsigned long convTime = getConversionTime(SPS);
         if (convTime > 16383) {
             convTime /= 1000;
